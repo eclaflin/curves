@@ -1,3 +1,4 @@
 pybaseball
 duckdb
 pandas
+pydantic
