@@ -2,3 +2,6 @@ pybaseball
 duckdb
 pandas
 pydantic
+apache-airflow
+sqlalchemy
+psycopg2
