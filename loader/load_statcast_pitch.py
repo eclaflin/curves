@@ -1,5 +1,5 @@
 from extractor.extract_statcast_pitch_day import get_statcast_pitch_day
-from loader.engine import engine as db
+from .engine import engine as db
 from models.statcast_pitch_day_models import Base, PitchDTO
 
 from sqlalchemy.orm import sessionmaker
@@ -121,7 +121,3 @@ def load_statcast_pitch():
         session.add(new_row)
 
     session.commit()
-
-
-if __name__ == '__main__':
-    load_statcast_pitch()
