@@ -12,8 +12,8 @@ session = Session()
 Base.metadata.create_all(db)
 
 
-def load_statcast_pitch():
-    pitch_date = input("Enter date to retrieve Statcast pitches from: ")
+def load_statcast_pitch(date):
+    pitch_date = date #input("Enter date to retrieve Statcast pitches from: ")
 
     df_pitch = get_statcast_pitch_day(pitch_date)
 
