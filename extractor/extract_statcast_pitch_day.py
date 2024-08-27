@@ -25,4 +25,24 @@ def get_statcast_pitch_day(query_date: str) -> pd.DataFrame:
         start_dt=query_date
     )
 
-    return df_statcast_pitch_day
+    # Sort the data frame
+    # this is to ensure that primary key downstream is sequential for each pitch of each game
+    sorted_df = df_statcast_pitch_day.sort_values(by=[
+            'game_date',
+            'game_pk',
+            'inning',
+            'inning_topbot',
+            'at_bat_number',
+            'pitch_number'
+        ],
+        ascending=[
+            True,
+            True,
+            True,
+            False,
+            True,
+            True
+        ]
+    )
+
+    return sorted_df
